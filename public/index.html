@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sazumi Cloud - Check Khodam</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" class=js-site-favicon type=image/ico href="https://cdn.jsdelivr.net/gh/SazumiVicky/Storage@main/meow.ico">
+  <meta name="description" content="Temukan Khodam Anda dengan mudah melalui website kami. Unggah foto Anda dan dapatkan hasil Khodam yang unik dan personal. Bagikan hasilnya dengan teman-teman Anda di media sosial!">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CEK KHODAM</h1>
+    <form id="khodamForm" enctype="multipart/form-data">
+      <label for="name">ISI DATA DIBAWAH INI:</label>
+      <input type="text" id="name" name="name" placeholder="Masukkan Nama" required>
+      
+      <label for="photo" class="custom-file-upload">Masukin Foto Kamu</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+      
+      <button type="submit">Check Khodam</button>
+    </form>
+  </div>
+
+  <div id="container-popup" class="container-popup"></div>
+
+  <footer>
+    <p>Dibuat oleh <b>Viki</b> dengan <span class="heart">❤️</span></p>
+    <p>Total View: <b><span id="total-views">0</span></b></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
