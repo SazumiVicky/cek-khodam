@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share - Check Khodam</title>
+  <link rel="stylesheet" href="share.css">
+  <link rel="icon" class=js-site-favicon type=image/ico href="https://cdn.jsdelivr.net/gh/SazumiVicky/Storage@main/meow.ico">
+  <meta name="description" content="Temukan Khodam Anda dengan mudah melalui website kami. Unggah foto Anda dan dapatkan hasil Khodam yang unik dan personal. Bagikan hasilnya dengan teman-teman Anda di media sosial!">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div id="share-result" class="result"></div>
+    <button onclick="window.location.href='/'">Check Khodam Saya</button>
+  </div>
+  <script>
+    const shareId = window.location.pathname.split('/').pop();
+    fetch(`/share-data/${shareId}`)
+      .then(response => response.json())
+      .then(data => {
+        const shareResult = document.getElementById('share-result');
+        shareResult.innerHTML = `
+          <img src="${data.photoUrl}" alt="Photo" style="max-width: 100%; border-radius: 10px;">
+          <h2>Hai ${data.name}</h2>
+          <p>Khodam kamu adalah <b>${data.khodam}</b></p>
+        `;
+      })
+      .catch(error => {
+        document.getElementById('share-result').innerHTML = '<p>Upps something went wrong!</p>';
+      });
+  </script>
+</body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7e9f0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url('http://cdn.sazumi.moe/file/msioc8.png');
+  background-repeat: repeat;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #ffffff;
+  border: 1px solid #cbb7b7;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 10px 10px 0px 0px #000;
+  text-align: center;
+  width: calc(100% - 40px);
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #d63384;
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.error p {
+  font-size: 1.2em;
+  color: red;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+}
+
+footer p {
+  margin: 5px 0;
+  font-family: 'Hack', monospace;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  background-color: #ff77a9;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 0px 0px #000;
+}
+
+button:hover {
+  background-color: #ff5692;
+  box-shadow: 6px 6px 0px 0px #000;
+}
+
+button:active {
+  transform: translateY(2px) translateX(2px);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 40px);
+    border-width: 2px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1em;
+  }
+}
+</style>
