@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7e9f0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url('http://cdn.sazumi.moe/file/msioc8.png');
+  background-repeat: repeat;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container, #container-popup {
+  background-color: #ffffff;
+  border: 1px solid #cbb7b7;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 10px 10px 0px 0px #000;
+  text-align: center;
+  width: calc(100% - 40px);
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+#container-popup {
+  display: none;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #d63384;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"], .custom-file-upload {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: calc(100% - 40px);
+  border: 1px solid #cbb7b7;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffdce5;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  cursor: pointer;
+  border: 1px solid #cbb7b7;
+  background-color: #ffdce5;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-file-upload:hover {
+  background-color: #ff77a9;
+  color: #fff;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  background-color: #ff77a9;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 0px 0px #000;
+}
+
+button:hover {
+  background-color: #ff5692;
+  box-shadow: 6px 6px 0px 0px #000;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+button:active {
+  transform: translateY(2px) translateX(2px);
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+.analyzing {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.analyzing p {
+  text-align: left;
+  margin: 5px 0;
+}
+
+.blur-in {
+  animation: blurIn 0.5s ease-in-out;
+}
+
+@keyframes blurIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.result h2 {
+  font-size: 1.5em;
+  color: #d63384;
+}
+
+.result p {
+  font-size: 17px;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.result img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.error p {
+  font-size: 1.2em;
+  color: red;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+}
+
+footer p {
+  margin: 5px 0;
+  font-family: 'Hack', monospace;
+}
+
+@media (max-width: 600px) {
+  .container, #container-popup {
+    width: calc(100% - 40px);
+    border-width: 2px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1em;
+  }
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.share-btn {
+  background-color: #fff;
+  border: 2px solid #d63384;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #d63384;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.share-btn:hover {
+  background-color: #d63384;
+  color: #fff;
+}
+
+.share-btn i {
+  pointer-events: none;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
