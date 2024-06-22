@@ -78,4 +78,4 @@ Proyek ini dilisensikan di bawah lisensi MIT. Lihat file [LICENSE](LICENSE) untu
 
 ## Kontak
 
-Jika Anda memiliki pertanyaan atau saran, silakan hubungi saya di [email@example.com](mailto:root@sazumi.moe).
+Jika Anda memiliki pertanyaan atau saran, silakan hubungi saya di [root@sazumi.moe](mailto:root@sazumi.moe).
